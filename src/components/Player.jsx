@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 useState;
-export default function Player({ intialName, symbol }) {
+export default function Player({ intialName, symbol, isActive}) {
   const [isEditable, setisEditable] = useState(false);
   const [playerName, setplayerName] = useState(intialName);
   let dynamicFeild = <span className="player-name">{playerName}</span>;
@@ -16,7 +16,7 @@ export default function Player({ intialName, symbol }) {
     dynamicFeild = <input type="text" required value={playerName} onChange={handleChange}></input>
   }
   return (
-    <li>
+    <li className={isActive ? 'active':undefined}>
       <span className="player">
         {dynamicFeild}
         <span className="player-symbol">{symbol}</span>
