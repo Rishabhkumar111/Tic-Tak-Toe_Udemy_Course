@@ -6,7 +6,6 @@ export default function Player({ intialName, symbol, isActive, onNameChange}) {
   let dynamicFeild = <span className="player-name">{playerName}</span>;
 
   function handleChange(event){
-    console.log(event)
     setplayerName(event.target.value);
   }
 
